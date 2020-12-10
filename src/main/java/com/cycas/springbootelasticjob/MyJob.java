@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @Description:
  * @date 2020/10/2915:40
  */
-@ElasticSimpleJob(cron = "0/2 * * * * ?",
+@ElasticSimpleJob(cron = "0 0/30 * * * ?",
     jobName = "firstJob",
     shardingTotalCount = 2,
     jobParameter = "测试参数",
@@ -47,4 +47,22 @@ public class MyJob implements SimpleJob {
                 shardingContext.getTaskId()
         ));
     }
+
+    public static void main(String[] args) {
+        try {
+            for (int i = 0; i < 3; i++) {
+                try {
+                    throw new RuntimeException("");
+                } catch (Exception e) {
+                    System.out.println("发生异常:" + i);
+                } finally {
+                    System.out.println("结束:" + i);
+                }
+            }
+
+        } catch (Exception e) {
+            System.out.println("发生了异常");
+        }
+    }
+
 }
