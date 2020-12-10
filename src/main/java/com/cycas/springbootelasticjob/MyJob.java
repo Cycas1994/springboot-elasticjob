@@ -59,7 +59,7 @@ public class MyJob implements SimpleJob {
                     System.out.println("结束:" + i);
                 }
             }
-
+            System.out.println("hi");
         } catch (Exception e) {
             System.out.println("发生了异常");
         }
