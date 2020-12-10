@@ -60,6 +60,7 @@ public class MyJob implements SimpleJob {
                 }
             }
             System.out.println("hi");
+            System.out.println("hi two");
         } catch (Exception e) {
             System.out.println("发生了异常");
         }
