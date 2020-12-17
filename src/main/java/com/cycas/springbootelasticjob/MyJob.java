@@ -49,21 +49,9 @@ public class MyJob implements SimpleJob {
     }
 
     public static void main(String[] args) {
-        try {
-            for (int i = 0; i < 3; i++) {
-                try {
-                    throw new RuntimeException("");
-                } catch (Exception e) {
-                    System.out.println("发生异常:" + i);
-                } finally {
-                    System.out.println("结束:" + i);
-                }
-            }
-            System.out.println("hi");
-            System.out.println("hi two");
-        } catch (Exception e) {
-            System.out.println("发生了异常");
-        }
+        String a=" &&,&& &&,&& ";
+        String[] aa = a.split("&&,&&");
+        System.out.println(aa.length);
     }
 
 }
